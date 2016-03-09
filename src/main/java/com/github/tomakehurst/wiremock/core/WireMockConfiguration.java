@@ -45,6 +45,7 @@ public class WireMockConfiguration implements Options {
     private String keyStorePath = Resources.getResource("keystore").toString();
     private String keyStorePassword = "password";
     private String trustStorePath;
+    private String trustStoreKeyAlias;
     private String trustStorePassword = "password";
     private boolean needClientAuth;
 
@@ -127,6 +128,12 @@ public class WireMockConfiguration implements Options {
         this.trustStorePath = truststorePath;
         return this;
     }
+
+    public WireMockConfiguration trustStoreKeyAlias(String trustStoreKeyAlias) {
+        this.trustStoreKeyAlias = trustStoreKeyAlias;
+        return this;
+    }
+
 
     public WireMockConfiguration trustStorePassword(String trustStorePassword) {
         this.trustStorePassword = trustStorePassword;
@@ -241,6 +248,7 @@ public class WireMockConfiguration implements Options {
                 .trustStorePath(trustStorePath)
                 .trustStorePassword(trustStorePassword)
                 .needClientAuth(needClientAuth)
+                .trustStoreKeyAlias(trustStoreKeyAlias)
                 .build();
     }
 

@@ -94,6 +94,7 @@ public class WireMockServer implements Container, LocalStubbing, Admin {
                         new ProxyResponseRenderer(
                                 options.proxyVia(),
                                 options.httpsSettings().trustStore(),
+                                options.httpsSettings().trustStoreKeyAlias(),
                                 options.shouldPreserveHostHeader(),
                                 options.proxyHostHeader()
                         ),
